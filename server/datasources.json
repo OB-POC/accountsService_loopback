@@ -1,0 +1,64 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "getAccountData": {
+    "name": "getAccountData",
+    "baseURL": "http://localhost:5000/dbService/",
+    "crud": true,
+    "connector": "rest",
+    "operations": [{
+      "functions": {
+        "getData": []
+      },
+      "template": {
+        "method": "GET",
+        "url": "http://localhost:5000/dbService/userData",
+        "options": {
+          "strictSSL": true,
+          "useQuerystring": true
+        }
+      }
+    },
+    {
+      "functions": {
+        "getDebData": ["username"]
+      },
+      "template": {
+        "method": "GET",
+        "url": "http://localhost:5000/dbService/{username:string}-debit",
+        "options": {
+          "strictSSL": true,
+          "useQuerystring": true
+        }
+      }
+    },
+    {
+      "functions": {
+        "getCustomData": ["username"]
+      },
+      "template": {
+        "method": "GET",
+        "url": "http://localhost:5000/dbService/{username:string}-debit",
+        "options": {
+          "strictSSL": true,
+          "useQuerystring": true
+        }
+      }
+    },
+    {
+      "functions": {
+        "getCredData": ["username"]
+      },
+      "template": {
+        "method": "GET",
+        "url": "http://localhost:5000/dbService/{username:string}-credit",
+        "options": {
+          "strictSSL": true,
+          "useQuerystring": true
+        }
+      }
+    }]
+  }
+}
